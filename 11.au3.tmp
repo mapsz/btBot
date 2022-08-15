@@ -1,0 +1,12 @@
+local $fotosort = ClipGet()
+
+$fotosort = StringTrimLeft ( $fotosort, StringInStr($fotosort, "Fotografiju skaits kopa:"))
+
+
+$fotosort = StringTrimLeft ( $fotosort, StringInStr($fotosort, ".jpg?") - 40)
+
+$photo_ = StringLeft ( $fotosort, StringInStr($fotosort, ".jpg?") -1)
+
+$photo_ = StringTrimLeft ( $photo_, StringInStr($photo_, "/",0,-1,20))
+
+		ClipPut($photo_)

@@ -1,0 +1,57 @@
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# ----------save/open mht files---------------------------------------------------------------------------
+#
+# Dependencies	: main.kmm (Go)
+# Resources	: -
+# Preferences	: -
+#
+# ------------------------------------------------------------------------------------------------------------------
+
+$_tool_path=getfolder(RootFolder)."\\Tools";
+$_km_path=getfolder(RootFolder)."\\k-meleon.exe";
+$_mht_path=getfolder(RootFolder)."\\Tools\\webarchives";
+
+
+
+kmmht_save{
+menugrayed=(hostname($URL)=="");
+$mhtsug1 = gsub("\\", "-" ,$TITLE);
+$mhtsug2 = gsub("|", "" ,$mhtsug1);
+$mhtsug3 = gsub("?", "" ,$mhtsug2);
+$mhtsug4 = gsub(" ", "_" ,$mhtsug3);
+$mhtsug5 = gsub(":", "" ,$mhtsug4);
+$mhtsug6 = gsub("/", "" ,$mhtsug5);
+$mhtsug7 = gsub("\"", "-" ,$mhtsug6);
+exec($_tool_path."\\kmmhtsave.exe \"".$_km_path."\" \"". $mhtsug7."\" " . $URL);
+}
+
+kmmht_auto{
+menugrayed=(hostname($URL)=="");
+$mhtsug1 = gsub("\\", "-" ,$TITLE);
+$mhtsug2 = gsub("|", "" ,$mhtsug1);
+$mhtsug3 = gsub("?", "" ,$mhtsug2);
+$mhtsug4 = gsub(" ", "_" ,$mhtsug3);
+$mhtsug5 = gsub(":", "" ,$mhtsug4);
+$mhtsug6 = gsub("/", "" ,$mhtsug5);
+$mhtsug7 = gsub("\"", "-" ,$mhtsug6);
+exec($_tool_path."\\SavePage.exe \"". $mhtsug7."\" \"". $URL."\" \"".$_mht_path."\"");
+}
+
+kmmht_open{
+exec($_tool_path."\\kmmhtopen.exe \"".$_km_path."\" ");
+}
+
+kmmht_BuildMenu{
+setmenu("&File",inline,mht_page,4);
+setmenu(mht_page,popup,"MHT Web Archive");
+setmenu("MHT Web Archive",macro,"Open MHT..",kmmht_open);
+setmenu("MHT Web Archive",macro,"Auto-save",kmmht_auto);
+setmenu("MHT Web Archive",macro,"Save as MHT",kmmht_save);
+}
+
+
+$OnInit=$OnInit."kmmht_BuildMenu;";
+
+# ------------------------------------------------------------------------------------------------------------------
+$macroModules=$macroModules."kmmht;";

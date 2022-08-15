@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+
+	<info val='Установите это значение в false, чтобы иметь возможность перемещаться по дереву лент с помощью нажатия кнопок с первой буквой ленты/группы.' />
+	<feedtree disableKeyNavigation="false"/>
+
+	<key id="add-search-group-key" modifiers="" key=""/>
+	<key id="add-group-key" modifiers="" key=""/>
+	<key id="delete-group-key" modifiers="" key=""/>
+	<key id="add-feed-key" modifiers="" key=""/>
+	<key id="delete-feed-key" modifiers="" key=""/>
+	<key id="delete-feed-from-group-key" modifiers="" key=""/>
+	<key id="refresh-key" modifiers="" key=""/>
+	<key id="do-cancel-check-feeds-key" modifiers="" key=""/>
+	<key id="mark-all-read-key" modifiers="" key=""/>
+	<key id="next-unread-key" modifiers="" key=""/>
+	<key id="prev-unread-key" modifiers="" key=""/>
+	<key id="open-unread-key" modifiers="" key=""/>
+	<key id="options-key" modifiers="" key=""/>
+	<key id="home-key" modifiers="" key=""/>
+	<key id="open-selected-key" modifiers="" key=""/>
+	<key id="delete-selected-key" modifiers="" key=""/>
+	<key id="manage-livemarks-key" modifiers="" key=""/>
+	<key id="toggle-filter-key" modifiers="" key=""/>
+</body>

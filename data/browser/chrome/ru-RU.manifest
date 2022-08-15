@@ -1,0 +1,23 @@
+locale	global			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/global/
+locale	pipnss			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/pipnss/
+locale	necko			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/necko/
+locale	navigator		ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/navigator/
+locale	navigator-platform	ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/navigator-platform/
+locale	communicator		ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/communicator/
+locale	communicator-platform	ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/communicator-platform/
+locale	navigator-platform	ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/navigator-platform/
+locale	wallet			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/wallet/
+locale	branding		ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/branding/
+locale	global-platform		ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/global-platform/
+locale	cookie			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/cookie/
+locale	pippki			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/pippki/
+locale	necko			ru-RU	jar:ru-RU.jar!/embed/locale/ru-RU/necko/
+locale	global-region		RU	jar:ru-RU.jar!/embed/locale/RU/global-region/
+locale	navigator-region	RU	jar:ru-RU.jar!/embed/locale/RU/navigator-region/
+locale	communicator-region	RU	jar:ru-RU.jar!/embed/locale/RU/communicator-region/
+
+locale	console2		ru-RU	jar:ru-RU.jar!/console2/locale/ru-RU/console2/
+
+locale	kmprefs			ru-RU	jar:ru-RU.jar!/kmprefs/locale/ru-RU/
+
+locale	mtypes			ru-RU	jar:ru-RU.jar!/mtypes/locale/ru-RU/mtypes/

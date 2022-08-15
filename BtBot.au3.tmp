@@ -1,0 +1,29 @@
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Compression=0
+#AutoIt3Wrapper_UseUpx=n
+#AutoIt3Wrapper_UseX64=n
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
+Global $fotosort,$callphotosort,$photo_,$timerphoto,$Paused,$timer_,$cscored, $captchaleft, $captcha_,$gtimer_,$time,$reset,$timer1_,$acccheck_
+Opt("sendKeyDelay", 0)
+Opt("sendKeydownDelay", 0)
+Opt("MouseClickDelay" , 0)
+Opt("MustDeclareVars", 1)
+#include "all.au3"
+
+#include "input.au3"
+
+
+Call("reset")
+$gtimer_ = TimerInit()
+ToolTip($album_)
+ClipPut(0)
+$callphotosort = 1
+$timer_ = TimerInit()
+$fotosort = ""
+While 1=1
+
+	Call ("scoreloop")
+
+WEnd
+
+MsgBox(1, "", "ok")

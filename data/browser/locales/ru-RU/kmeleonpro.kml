@@ -1,0 +1,75 @@
+# LANGUAGE DEFINITION FILE FOR K-MELEON PRO
+
+# ----- Search Bar Ext -----
+
+searchbarext=Панель поиска
+
+# ----- oGet -----
+
+Download link with &Oget=&Загрузить ссылку с помощью oGet
+Download image with &Oget=&Загрузить изображение с помощью oGet
+Download managers=Выбор менеджера загрузок...
+Download selection with &Oget=Загрузить выбранное с помощью oGet
+
+# ----- Get file size -----
+
+&Get file size=&Определить размер файла
+
+# ----- Spellchecker -----
+
+Spell Checker=Проверка орфографии
+Add this word=Добавить в словарь это слово
+Ignore this word=Игнорировать это слово
+Dictionaries=Словари
+Disable spellchecker=Отключить проверку орфографии
+Enable spellchecker=Включить проверку орфографии
+K-Meleon spellchecker=Проверка орфографии в K-Meleon
+Spellchecker is disabled.\r\nEnable?=Проверка орфографии отключена.\r\nВключить?
+Set Default=Установить по умолчанию
+Choose the Dictionaries Folder=Выберите папку для словарей
+You have to restart K-Meleon to make changes take effect,\n and access to new dictionaries folder.=Вы должны перезапустить K-Meleon для того, чтобы произведённые изменения вступили в силу,\nи доступ в новую папку для словарей был получен.
+Dictionaries Folder Modified=Папка для словарей изменена
+
+# ----- BBCode -----
+
+&Smileys=&Смайлики
+Drool=Drool
+Cool=Cool
+Mad=Mad
+Sleepy=Sleepy
+Sad=Sad
+Smile=Smile
+Big grin=Big grin
+Surprised=Surprised
+Tongue=Tongue
+Confused=Confused
+Wink=Wink
+Blush=Blush
+Wicked=Wicked
+Roll eyes=Roll eyes
+&BBcode=&BBcode
+Line=Линия
+Bold=Полужирный
+Underlined=Подчёркивание
+Italic=Курсив
+Striked=Зачёркивание
+Superscript=Верхний индекс
+Subscript=Нижний индекс
+Font color=Цвет шрифта
+Font size=Размер шрифта
+Center=Центрирование
+Image=Изображение
+Link=Ссылка
+Mail=Почта
+Code=Код
+Quote=Цитата
+List=Список
+
+# ----- MHT -----
+
+MHT Web Archive=Архив MHT
+Open MHT..=Открыть MHT...
+Auto-save=Автосохранение
+Save as MHT=Сохранить как MHT...
+
+#--------------------------------------------------------

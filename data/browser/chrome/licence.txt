@@ -1,0 +1,5 @@
+The Original Code is mozilla.org code and has been adapted for use with K-Meleon.
+
+The contents of this folder with chrome files may be used under the terms of either the GNU General Public License Version 2 or later (the "GPL"), or the GNU Lesser General Public License Version 2.1 or later (the "LGPL").
+
+Software distributed under this License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. If You do or can not agree to these conditions You are forbidden to use it.

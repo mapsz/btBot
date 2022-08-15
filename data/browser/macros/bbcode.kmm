@@ -1,0 +1,142 @@
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# --------- BBcodes for K-Meleon Forums by desga2 -------------------------------------------------
+#
+# Dependencies : -
+# Resources : -
+# Preferences : -
+#
+# -------------------------------------------------------------------------------------------------
+
+# ----- PRIVATE
+#BBcode Smileys ======================================
+#Add a horizontal separator line: [hr]
+$_line="[hr]";
+#Smileys:
+$_drool=":B";
+$_cool="8-)";
+$_mad=">-(";
+$_sleepy="¬_¬";
+$_sad=":(";
+$_smile=":)";
+$_biggrin=":D";
+$_surprised=":O";
+$_tongue=":P";
+$_confused=":s";
+# From disrupted's smileys macro plus:
+$_wink="[img]http://necb.bizhat.com/kmeleon/icon_wink.gif[/img]";
+$_blush="[img]http://necb.bizhat.com/kmeleon/icon_blush.gif[/img]";
+$_wicked="[img]http://necb.bizhat.com/kmeleon/icon_wicked.gif[/img]";
+$_rolleyes="[img]http://necb.bizhat.com/kmeleon/icon_rolleyes.gif[/img]";
+_Smileys{
+#menugrayed=(substr($URL,0,16)=="http://kmeleon.s"?false:true);
+$_clip = getclipboard();
+setclipboard($ARG);
+$ARG == $_sleepy?setclipboard("[img]http://kmeleon.sourceforge.net/forum/mods/smileys/images/g001_ssleepy.gif[/img]"):0;
+id("ID_EDIT_PASTE");
+setclipboard($_clip);
+}
+#BBcode T1 ======================================
+#Bold text: [b]...[/b]
+$_bold="b";
+#Underlined text: [u]...[/u]
+$_underl="u";
+#Italic text: [i]...[/i]
+$_italic="i";
+#Striked through text: [s]...[/s]
+$_strike="s";
+#Superscript: [sup]...[/sup]
+$_sup="sup";
+#Subscript: [sub]...[/sub]
+$_sub="sub";
+#Center text: [center]...[/center]
+$_center="center";
+#Link an image from the web: [img]...[/img]
+$_image="img";
+#Link to an email address [email]...[/email]
+$_email="email";
+#Monospaced, formatted code: [code]...[/code]
+$_code="code";
+_BB_T1{
+$_clip = getclipboard();
+$_BB_code = "[".$ARG."]".$SelectedText."[/".$ARG."]";
+setclipboard($_BB_code);
+id("ID_EDIT_PASTE");
+setclipboard($_clip);
+}
+#BBcode T2 ======================================
+#Font color: [color=...]...[/color]
+$_Fcolor="color";
+#Font size: [size=...]...[/size]
+$_Fsize="size";
+#Link to a website: [url]...[/url] or [url=...]...[/url]
+$_link="url";
+#Quoted text: [quote]...[/quote] or [quote=...]...[/quote]
+$_quote="quote";
+_BB_T2{
+$_clip = getclipboard();
+$_BB_code = "[".$ARG."=]".$SelectedText."[/".$ARG."]";
+setclipboard($_BB_code);
+id("ID_EDIT_PASTE");
+setclipboard($_clip);
+}
+#Itemized list: [list] [*] item 1 [*] item 2 [/list]
+_BB_List{
+$_clip = getclipboard();
+$_temp = gsub("\n", "\n[*]", $SelectedText);
+substr($_temp, (length($_temp)-3))=="[*]"?$_temp=substr($_temp, 0,(length($_temp)-3)):0;
+$_BB_code = "[list]\n[*]".$_temp."\n[/list]";
+setclipboard($_BB_code);
+id("ID_EDIT_PASTE");
+setclipboard($_clip);
+}
+
+_BBcode_BuildMenu{
+#Text box context menu:
+setmenu("TextPopup",separator,-1);
+setmenu("TextPopup",popup,"&Smileys",-1);
+setmenu("&Smileys",macro,"Drool","_Smileys(".$_drool.")");
+setmenu("&Smileys",macro,"Cool","_Smileys(".$_cool.")");
+setmenu("&Smileys",macro,"Mad","_Smileys(".$_mad.")");
+setmenu("&Smileys",macro,"Sleepy","_Smileys(".$_sleepy.")");
+setmenu("&Smileys",macro,"Sad","_Smileys(".$_sad.")");
+setmenu("&Smileys",macro,"Smile","_Smileys(".$_smile.")");
+setmenu("&Smileys",macro,"Big grin","_Smileys(".$_biggrin.")");
+setmenu("&Smileys",macro,"Surprised","_Smileys(".$_surprised.")");
+setmenu("&Smileys",macro,"Tongue","_Smileys(".$_tongue.")");
+setmenu("&Smileys",macro,"Confused","_Smileys(".$_confused.")");
+## From disrupted's smileys macro plus:
+#setmenu("&Smileys",separator,10);
+setmenu("&Smileys",macro,"Wink","_Smileys(".$_wink.")");
+setmenu("&Smileys",macro,"Blush","_Smileys(".$_blush.")");
+setmenu("&Smileys",macro,"Wicked","_Smileys(".$_wicked.")");
+setmenu("&Smileys",macro,"Roll eyes","_Smileys(".$_rolleyes.")");
+#Selection context menu:
+setmenu("Selection",popup,"&BBcode",-1);
+setmenu("&BBcode",macro,"Line","_Smileys(".$_line.")");
+setmenu("&BBcode",macro,"Bold","_BB_T1(".$_bold.")");
+setmenu("&BBcode",macro,"Underlined","_BB_T1(".$_underl.")");
+setmenu("&BBcode",macro,"Italic","_BB_T1(".$_italic.")");
+setmenu("&BBcode",macro,"Striked","_BB_T1(".$_strike.")");
+setmenu("&BBcode",macro,"Superscript","_BB_T1(".$_sup.")");
+setmenu("&BBcode",macro,"Subscript","_BB_T1(".$_sub.")");
+setmenu("&BBcode",macro,"Font color","_BB_T2(".$_Fcolor.")");
+setmenu("&BBcode",macro,"Font size","_BB_T2(".$_Fsize.")");
+setmenu("&BBcode",macro,"Center","_BB_T1(".$_center.")");
+setmenu("&BBcode",macro,"Image","_BB_T1(".$_image.")");
+setmenu("&BBcode",macro,"Link","_BB_T2(".$_link.")");
+setmenu("&BBcode",macro,"Mail","_BB_T1(".$_email.")");
+setmenu("&BBcode",macro,"Code","_BB_T1(".$_code.")");
+setmenu("&BBcode",macro,"Quote","_BB_T2(".$_quote.")");
+setmenu("&BBcode",macro,"List","_BB_List");
+#Accel menu:
+#setmenu("BBcode_AM",inline,"&Smileys",-1);
+setmenu("BBcode_AM",popup,"&Smileys",-1);
+setmenu("BBcode_AM",popup,"&BBcode",-1);
+# Define accel Ctrl+K for show popup BBcode_AM menu:
+setaccel("CTRL K","rebarmenu(BBcode_AM)");
+}
+
+$OnInit=$OnInit."_BBcode_BuildMenu;";
+# ----------------------------------------------------------
+$macroModules=$macroModules."KmBBcode;";

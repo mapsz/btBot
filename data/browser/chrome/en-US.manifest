@@ -1,0 +1,23 @@
+locale	global			en-US	jar:en-US.jar!/embed/locale/en-US/global/
+locale	pipnss			en-US	jar:en-US.jar!/embed/locale/en-US/pipnss/
+locale	necko			en-US	jar:en-US.jar!/embed/locale/en-US/necko/
+locale	navigator		en-US	jar:en-US.jar!/embed/locale/en-US/navigator/
+locale	navigator-platform	en-US	jar:en-US.jar!/embed/locale/en-US/navigator-platform/
+locale	communicator		en-US	jar:en-US.jar!/embed/locale/en-US/communicator/
+locale	communicator-platform	en-US	jar:en-US.jar!/embed/locale/en-US/communicator-platform/
+locale	navigator-platform	en-US	jar:en-US.jar!/embed/locale/en-US/navigator-platform/
+locale	wallet			en-US	jar:en-US.jar!/embed/locale/en-US/wallet/
+locale	branding		en-US	jar:en-US.jar!/embed/locale/en-US/branding/
+locale	global-platform		en-US	jar:en-US.jar!/embed/locale/en-US/global-platform/
+locale	cookie			en-US	jar:en-US.jar!/embed/locale/en-US/cookie/
+locale	pippki			en-US	jar:en-US.jar!/embed/locale/en-US/pippki/
+locale	necko			en-US	jar:en-US.jar!/embed/locale/en-US/necko/
+locale	global-region		US	jar:en-US.jar!/embed/locale/US/global-region/
+locale	navigator-region	US	jar:en-US.jar!/embed/locale/US/navigator-region/
+locale	communicator-region	US	jar:en-US.jar!/embed/locale/US/communicator-region/
+
+locale	console2		en-US	jar:en-US.jar!/console2/locale/en-US/console2/
+
+locale	kmprefs			en-US	jar:en-US.jar!/kmprefs/locale/en-US/
+
+locale	mtypes			en-US	jar:en-US.jar!/mtypes/locale/en-US/mtypes/

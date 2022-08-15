@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="chrome://navigator/content/navigator.xul#sidebar-box"
+                   hidden="true" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#address"
+                   ordinal="1" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul">
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#flag"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#title"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#read"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#Xtend"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#prob"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#date"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#source"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#author"/>
+    <NC:persist RDF:resource="chrome://newsfox/content/newsfox.xul#blog"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#flag"
+                   ordinal="1" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#read"
+                   ordinal="5" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#blog"
+                   ordinal="17" />
+  <RDF:Description RDF:about="chrome://navigator/content/navigator.xul#sidebar-splitter"
+                   hidden="true" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#filter"
+                   ordinal="3" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#prob"
+                   ordinal="9" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/settings.xul">
+    <NC:persist RDF:resource="chrome://adblockplus/content/settings.xul#col-filter"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/settings.xul#col-enabled"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/settings.xul#col-hitcount"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/settings.xul#col-lasthit"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://kmprefs/content/pref-filetypes.xul#fileHandlersList"
+                   lastSelected="0" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/settings.xul#col-hitcount"
+                   ordinal="5" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebarDetached.xul#abpDetachedSidebar">
+    <left NC:parseType="Integer">-8</left>
+    <top NC:parseType="Integer">-8</top>
+    <width NC:parseType="Integer">1382</width>
+    <height NC:parseType="Integer">744</height>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://console2/content/console2.xul">
+    <NC:persist RDF:resource="chrome://console2/content/console2.xul#ConsoleBox"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://adblockplus/content/composer.xul">
+    <NC:persist RDF:resource="chrome://adblockplus/content/composer.xul#abp-composer"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#type"
+                   ordinal="5" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#date"
+                   ordinal="11" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#Xtend"
+                   ordinal="7" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/settings.xul#col-filter"
+                   ordinal="1" />
+  <RDF:Description RDF:about="chrome://console2/content/console2.xul#ConsoleBox"
+                   mode="Errors Warnings Messages"
+                   modeLang="JS"
+                   modeCtx="Content" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/composer.xul#abp-composer"
+                   advancedMode="false" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#state"
+                   ordinal="7"
+                   sortDirection="descending" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#source"
+                   ordinal="13" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/settings.xul#col-enabled"
+                   ordinal="3" />
+  <RDF:Description RDF:about="chrome://navigator/content/navigator.xul">
+    <NC:persist RDF:resource="chrome://navigator/content/navigator.xul#sidebar-panels"/>
+    <NC:persist RDF:resource="chrome://navigator/content/navigator.xul#sidebar-box"/>
+    <NC:persist RDF:resource="chrome://navigator/content/navigator.xul#sidebar-splitter"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul">
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#address"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#filter"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#type"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#state"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#size"/>
+    <NC:persist RDF:resource="chrome://adblockplus/content/sidebar.xul#list"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#title"
+                   ordinal="3" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/settings.xul#col-lasthit"
+                   ordinal="7" />
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#size"
+                   ordinal="9" />
+  <RDF:Description RDF:about="chrome://newsfox/content/newsfox.xul#author"
+                   ordinal="15" />
+  <RDF:Description RDF:about="chrome://navigator/content/navigator.xul#sidebar-panels"
+                   last-selected-panel="urn:sidebar:panel:bookmarks" />
+  <RDF:Description RDF:about="chrome://kmprefs/content/pref-filetypes.xul">
+    <NC:persist RDF:resource="chrome://kmprefs/content/pref-filetypes.xul#fileHandlersList"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://adblockplus/content/sidebar.xul#list"
+                   defaultSort=" " />
+</RDF:RDF>

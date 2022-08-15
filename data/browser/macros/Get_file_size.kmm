@@ -1,0 +1,46 @@
+# Top of kmm file -------------------------------------------------
+
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# ---------- GetSize -------
+#
+# Needed files : GetSize.exe (or similar)
+# -----------------------------------------------------------------
+#
+$PATH = getfolder( RootFolder ); 
+$_GetSize_Path="\"".$PATH."\\GetSize\\GetSize.exe\" %1"; 
+$_GetSize_CommandLine="";
+
+# ---------- General ----------------------------------------------
+
+GetSize_Path{
+$ext="kmm"; &getExtensionHandler; exec(sub("%1","macros\\Get_File_Size.kmm",$cmdline));
+}
+
+_GetSize_CommandLine{
+$_GetSize_CommandLine=$_GetSize_Path;
+}
+
+# ----- MACROS -----------------------------------------------------
+
+GetSize{
+menugrayed=($_GetSize_CommandLine=="");
+exec(sub("%1",$LinkURL ? $LinkURL." ".$URL : $ImageURL,$_GetSize_CommandLine));
+}
+
+# ----- PRIVATE ----------------------------------------------------
+
+_GetSize_BuildMenu{
+# context menus
+setmenu(LinkSave,macro,"&Get file size",GetSize,ID_SAVE_LINK_AS);
+setmenu(ImageSave,macro,"&Get file size",GetSize,ID_SAVE_IMAGE_AS);
+# accel
+setaccel("SHIFT ALT S","macros(GetSize_Path)");
+}
+
+#
+$OnInit=$OnInit."_GetSize_CommandLine;"."_GetSize_BuildMenu;";
+# ------------------------------------------------------------------
+$macroModules=$macroModules."GetSize;";
+
+# End of kmm file -------------------------------------------------- 

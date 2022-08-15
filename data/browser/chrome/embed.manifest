@@ -1,0 +1,39 @@
+content	pipnss				jar:embed.jar!/embed/content/pipnss/
+overlay	chrome://communicator/content/pref/preftree.xul			chrome://pippki/content/PrefOverlay.xul
+overlay	chrome://navigator/content/pageInfo.xul				chrome://pippki/content/PageInfoOverlay.xul
+content	pippki				jar:embed.jar!/embed/content/pippki/
+content	cookie				jar:embed.jar!/embed/content/cookie/
+content	necko				jar:embed.jar!/embed/content/necko/
+content	navigator			jar:embed.jar!/embed/content/navigator/
+content	navigator-region		jar:embed.jar!/embed/content/navigator-region/
+content	navigator-platform		jar:embed.jar!/embed/content/navigator-platform/
+content	global				jar:embed.jar!/embed/content/global/
+content	global-region			jar:embed.jar!/embed/content/global-region/
+content	global-platform			jar:embed.jar!/embed/content/global-platform/
+overlay	chrome://communicator/content/contentAreaContextOverlay.xul	chrome://communicator/content/permissions/imageContextOverlay.xul
+overlay	chrome://communicator/content/pref/preftree.xul			chrome://communicator/content/pref/permissionsPrefsOverlay.xul
+overlay	chrome://navigator/content/navigatorOverlay.xul			chrome://communicator/content/permissions/permissionsNavigatorOverlay.xul
+overlay	chrome://navigator/content/navigatorOverlay.xul			chrome://communicator/content/permissions/cookieTasksOverlay.xul
+overlay	chrome://messenger/content/mailWindowOverlay.xul		chrome://communicator/content/permissions/imageContextOverlay.xul
+content	communicator			jar:embed.jar!/embed/content/communicator/
+content	communicator-region		jar:embed.jar!/embed/content/communicator-region/
+content	communicator-platform		jar:embed.jar!/embed/content/communicator-platform/
+content	branding			jar:embed.jar!/embed/content/branding/
+content	xbl-marquee			jar:embed.jar!/embed/content/xbl-marquee/
+
+skin	communicator	classic/1.0	jar:embed.jar!/embed/skin/classic/communicator/
+skin	navigator	classic/1.0	jar:embed.jar!/embed/skin/classic/navigator/
+skin	global		classic/1.0	jar:embed.jar!/embed/skin/classic/global/
+
+content	console2			jar:embed.jar!/console2/content/console2/
+skin	console2	classic/1.0	jar:embed.jar!/console2/skin/classic/console2/
+#override	chrome://global/content/console.xul	chrome://console2/content/console2.xul
+#overlay	chrome://global/content/console.xul	chrome://console2/content/seamonkey-hack.xul
+overlay		chrome://console2/content/console2.xul	chrome://console2/content/seamonkey-hack.xul
+
+content	flashblock			jar:embed.jar!/flashblock/content/flashblock/
+
+content	kmprefs				jar:embed.jar!/kmprefs/content/
+skin	kmprefs		classic/1.0	jar:embed.jar!/kmprefs/skin/
+
+content	mtypes				jar:embed.jar!/mtypes/content/mtypes/

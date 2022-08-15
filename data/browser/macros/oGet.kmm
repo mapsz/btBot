@@ -1,0 +1,63 @@
+# Top of kmm file -------------------------------------------------
+
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# ---------- Oget (Download with external download manager) -------
+#
+# Needed files : flashgot.exe, oget.exe
+# flashgot.exe: https://addons.mozilla.org/en-US/firefox/addon/220
+# oget.exe: http://lexi.ucoz.ru/oget_only.zip
+# -----------------------------------------------------------------
+
+# Example :
+# $_Oget_Path="\"C:\\Program Files\\K-Meleon\\Oget\\Oget.exe\" %1"
+# -----------------------------------------------------------------
+
+$PATH = getfolder(RootFolder);
+$_Oget_Path="\"".$PATH."\\oget\\oGet.exe\" %1";
+$_Oget_CommandLine="";
+
+# ---------- General ----------------------------------------------
+
+Oget_Path{
+$ext="kmm"; &getExtensionHandler; exec(sub("%1","macros\\Download_manager.kmm",$cmdline));
+}
+
+_Oget_CommandLine{
+$_Oget_CommandLine=$_Oget_Path;
+}
+
+# ----- MACROS -----------------------------------------------------
+
+Oget{
+menugrayed=($_Oget_CommandLine=="");
+exec(sub("%1",$LinkURL ? $LinkURL." ".$URL." ".$SelectedText : $ImageURL,$_Oget_CommandLine));
+}
+OgetSelection{
+menugrayed=($_Oget_CommandLine=="");
+id(ID_EDIT_COPY);
+exec(sub("%1","CLIPBOARD ".$URL." DOWNLOAD ALL",$_Oget_CommandLine));
+}
+SelectDM{
+menugrayed=($_Oget_CommandLine=="");
+exec(sub("%1","",$_Oget_CommandLine));
+}
+
+# ----- PRIVATE ----------------------------------------------------
+
+_Oget_BuildMenu{
+setmenu(Misc,macro,"Download managers",SelectDM,ID_SELECT_DM); 
+# context menus
+setmenu(LinkSave,macro,"Download link with &Oget",Oget,ID_SAVE_LINK_AS);
+setmenu(ImageSave,macro,"Download image with &Oget",Oget,ID_SAVE_IMAGE_AS);
+setmenu(SelectedText,macro,"Download selection with &Oget",OgetSelection,ID_SELECT_URL);
+# accel
+setaccel("SHIFT ALT W","macros(Oget_Path)");
+}
+
+#
+$OnInit=$OnInit."_Oget_CommandLine;"."_Oget_BuildMenu;";
+# ------------------------------------------------------------------
+$macroModules=$macroModules."Oget;";
+
+# End of kmm file -------------------------------------------------- 

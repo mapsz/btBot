@@ -1,0 +1,37 @@
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# --------- SpellCheck plugin for K-Meleon by mark307 -----------
+#
+# Dependencies :
+# Resources : -
+# Preferences : -
+#
+# -------------------------------------------------------
+# ----- PRIVATE
+
+SpellCheck{
+# use id() instead of plugin() to eliminate a bug with 1.5
+#plugin(spelltest,"");
+id("spelltest()");
+}
+
+DictPath{
+$__DictPath=getpref(STRING,"kmeleon.plugins.spelltest.dictDir");
+$__DictPath==""?$__DictPath=getfolder(RootFolder)."\\Dictionaries":0;
+$_DictPath=promptforfolder(_("Choose the Dictionaries Folder"),$__DictPath);
+$_DictPath==""?$_DictPath=$__DictPath:0;
+$_DictPath!=$__DictPath?setpref(STRING,"kmeleon.plugins.spelltest.dictDir",$_DictPath):0;
+$_DictPath!=$__DictPath?alert(_("You have to restart K-Meleon to make changes take effect,\n and access to new dictionaries folder."),_("Dictionaries Folder Modified")):0;
+}
+
+_SpellCheck_BuildMenu{
+setmenu("TextPopup",macro,"Spell Checker",SpellCheck);
+}
+_SpellCheck_SetAccels{
+setaccel("CTRL *","macros(SpellCheck)");
+setaccel("ALT *","macros(DictPath)");
+}
+$OnInit=$OnInit."_SpellCheck_SetAccels;_SpellCheck_BuildMenu;";
+
+# ----------------------------------------------------------
+$macroModules=$macroModules."SpellCheck;";

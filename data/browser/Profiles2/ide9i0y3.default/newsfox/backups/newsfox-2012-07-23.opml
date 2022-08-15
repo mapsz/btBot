@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+	<title>NewsFox OPML Export</title>
+	<dateModified>Mon Jul 23 2012 00:52:42 GMT+0300</dateModified>
+</head>
+<body><outline text="ЛЕНТЫ" type="NFgroup"><outline type="rss" text="newsfox.mozdev.org" xmlUrl="http://newsfox.mozdev.org/rss/rss.xml?startup" htmlUrl="" NFuid="newsfox.mozdev.org" NFdeleteOldStyle="0" NFautoCheck="true" NFstyle="0" NFstorage="false" NFlastUpdate="" NFautoRefreshInterval="0"/></outline></body>
+</opml>

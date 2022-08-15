@@ -1,0 +1,10 @@
+content	newsfox			jar:newsfox.jar!/content/newsfox/
+locale	newsfox	de-DE		jar:newsfox.jar!/locale/de-DE/
+locale	newsfox	en-US		jar:newsfox.jar!/locale/en-US/
+locale	newsfox	es-ES		jar:newsfox.jar!/locale/es-ES/
+locale	newsfox	fr-FR		jar:newsfox.jar!/locale/fr-FR/
+locale	newsfox	it-IT		jar:newsfox.jar!/locale/it-IT/
+locale	newsfox	pl-PL		jar:newsfox.jar!/locale/pl-PL/
+locale	newsfox	ru-RU		jar:newsfox.jar!/locale/ru-RU/
+locale	newsfox	zh-CN		jar:newsfox.jar!/locale/zh-CN/
+skin	newsfox	classic/1.0	jar:newsfox.jar!/skin/classic/newsfox/

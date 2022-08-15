@@ -1,0 +1,117 @@
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_UseX64=n
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
+Func score()
+	ToolTip("score",450,450)
+Opt("sendKeyDelay", 0)
+Opt("sendKeydownDelay", 0)
+$callphotosort = 0
+
+	if $acccheck_ >= 20 Then
+		Call("acccheck")
+		$acccheck_ = 0
+	endif
+
+	Call("winex")
+	Send("{ctrldown}l{ctrlup}" & "http://friends.boomtime.lv/window/friend/photo_view/" & $photo_ & "{enter}")
+	Call("pixwait", 15)
+	Call("clipwait")
+
+;~ 		captcha
+		If StringInStr($clip_, "Ievadiet kodu no bildes:") <> 0 Then
+			$captchaleft = 125
+			If $autsc_ = 0 Then
+				SoundPlay("data/sound.wav", 0)
+				MsgBox(262192, "Captcha", "Введите код и нажмите ок.")
+				Call("winex")
+				Send("{enter}")
+				Call("pixwait", 10)
+			ElseIf $autsc_ = 1 Then
+				MouseClick("left", 15, 125, 1, 0)
+				Call("captcha")
+			EndIf
+		EndIf
+;~ 		antispam
+		If $timerphoto >= 1 Then
+			while TimerDiff($timer1_) <= 1500
+				ToolTip("Оценено:" & $cscored & @CRLF & "Страница:" & $page__ + 1 & @CRLF & "До кода:" & $captchaleft & @CRLF & "Скорость:" & $time& @CRLF & "ANTISPAM",325,5,"",0,0)
+				Sleep(50)
+			WEnd
+				ToolTip("Оценено:" & $cscored & @CRLF & "Страница:" & $page__ + 1 & @CRLF & "До кода:" & $captchaleft & @CRLF & "Скорость:" & $time,325,5,"",0,0)
+		EndIf
+		If $timerphoto >= 6 Then
+			While TimerDiff($timer_) <= 17000
+				ToolTip("Оценено:" & $cscored & @CRLF & "Страница:" & $page__ + 1 & @CRLF & "До кода:" & $captchaleft & @CRLF & "Скорость:" & $time& @CRLF & "ANTISPAM",325,5,"",0,0)
+				Sleep(100)
+			WEnd
+				ToolTip("Оценено:" & $cscored & @CRLF & "Страница:" & $page__ + 1 & @CRLF & "До кода:" & $captchaleft & @CRLF & "Скорость:" & $time,325,5,"",0,0)
+			$timerphoto = 0
+			$timer_ = TimerInit()
+		EndIf
+
+	If StringInStr($clip_, "Komentars fotografijai") <> 0 Then
+
+
+
+;~ 		score
+			MouseClick("left", 15, 125, 3, 0)
+			Send("{tab 3}" & "{right " & $score_ & "}" & "{left}")
+			Local $coord_ = PixelSearch(0, 0, 600, 600, 0xA0EBCF)
+
+			If $coord_ = 0 Then
+				Return
+			EndIf
+
+			MouseClick("left", $coord_[0], $coord_[1], 1, 0)
+			Call("pixwait", 10)
+			Call("clipwait")
+
+;~ 		schetchiki
+		If StringInStr($clip_, "Jusu novertejums:") <> 0 Then
+			$acccheck_ += 1
+			$timer1_ = TimerInit()
+			$timerphoto += 1
+			$callphotosort = 1
+			$cscored = $cscored + 1
+			$captchaleft = $captchaleft - 1
+			$time = TimerDiff($gtimer_) / 1000
+			$time = $time / $cscored
+			$time = StringLeft($time, 4)
+			ToolTip("Оценено:" & $cscored & @CRLF & "Страница:" & $page__ + 1 & @CRLF & "До кода:" & $captchaleft & @CRLF & "Скорость:" & $time,325,5,"",0,0)
+;~ 		buy
+		ElseIf StringInStr($clip_, " pasutit?") <> 0 Then
+			If $buysc_ = 1 Then
+				Call("scbuy")
+			Else
+				MsgBox(1, "Error", "Оценки закончились")
+				Exit 0
+			EndIf
+;~ 		spam
+		ElseIf StringInStr($clip_, "spama nosutisana") <> 0 Then
+			Sleep(60000)
+;~ 		update
+		ElseIf StringInStr($clip_, "Sobrid portala veicam isla") Then
+			Sleep(30000)
+		EndIf
+;~ 	spam
+	ElseIf StringInStr($clip_, "spama nosutisana") <> 0 Then
+			Sleep(60000)
+;~ 	scored
+	ElseIf StringInStr($clip_, "Jusu novertejums:") <> 0 Then
+		$timerphoto = $timerphoto + 0.5
+		$callphotosort = 1
+	ElseIf StringInStr($clip_, "Ja ir ieslegts rezims") <> 0 Then
+		$timerphoto = $timerphoto + 0.5
+		$callphotosort = 1
+;~ 	smerch
+	ElseIf StringInStr($clip_, "Jus 30 minutes nevarat vertet d") <> 0 Then
+		If $album_ = 0 Then
+			$timerphoto = $timerphoto + 1
+			$callphotosort = 1
+		Else
+			ToolTip("смерч!", 400, 500, "", 1, 1)
+			Sleep(60000)
+		endIf
+	EndIf
+
+EndFunc   ;==>score

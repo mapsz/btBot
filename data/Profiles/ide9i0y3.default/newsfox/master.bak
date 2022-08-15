@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<newsfox-feedlist version="1.8">
+ <tag><![CDATA[]]></tag>
+ <feed exclude="false">
+  <uid>newsfox.mozdev.org</uid>
+  <url><![CDATA[http://newsfox.mozdev.org/rss/rss.xml?startup]]></url>
+  <dname><![CDATA[newsfox.mozdev.org]]></dname>
+  <storage>false</storage>
+  <deleteOldStyle>0</deleteOldStyle>
+  <daysToKeep>-1</daysToKeep>
+  <changedUnread>0</changedUnread>
+  <autoRefreshInterval>0</autoRefreshInterval>
+  <autoCheck>true</autoCheck>
+  <XfilterNew>false</XfilterNew>
+  <XfilterImages>false</XfilterImages>
+  <private>false</private>
+  <flags></flags>
+ </feed>
+</newsfox-feedlist>

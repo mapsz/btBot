@@ -1,0 +1,26 @@
+# K-Meleon Macros (http://kmeleon.sourceforge.net/wiki/index.php?id=MacroLanguage)
+
+# ---------- Creates links for download of Flash (ver 1.3.1 by Lex1) -----------------------------------------------
+#
+# Dependencies : 
+# Resources : -
+# Preferences : -
+#
+# ------------------------------------------------------------------------------------------------------------------
+
+GetFlash{
+injectJS("(function(){var getVideo=function(flashvars,src){var getLink=function(s){var rez=s.match(/[^\\s\\x22=&?]+\\.[^\\s\\x22=&?\\/]*(flv|mp4)/i);return rez?rez[0]:''};var getQuery=function(s,q){var rez=s.match(new RegExp('[&?]'+q+'=([^&]+)'));return rez?rez[1]:''};var getURL=function(f,s){return f.match(/^(\\w+:\\/\\/|\\/|$)/)?f:s.replace(/[#?].*$/,'').replace(/[^\\/]*$/,f)};var flv=decodeURIComponent(flashvars);var url=location.href;var q='';if(url.indexOf('youtube.com/watch?')!=-1&&(q=getQuery(flv,'video_id')))return'http://www.youtube.com/get_video?video_id='+q+'&t='+getQuery(flv,'t')+'&fmt=18';if(url.indexOf('video.google.com/videoplay?')!=-1&&(q=getQuery(src,'videoUrl')))return decodeURIComponent(q);if(url.indexOf('metacafe.com/watch/')!=-1&&(q=getQuery(flv,'mediaURL')))return q+'?__gda__='+getQuery(flv,'gdaKey');if(url.indexOf('dailymotion.com/')!=-1&&(q=getQuery(flv,'video')))return q.match(/[^@]+/);return getURL(getLink(flv)||decodeURIComponent(getLink(src)),src)};var createLink=function(l,t){var oLnk=document.createElement('a');oLnk.setAttribute('href',l);oLnk.setAttribute('style','display:inline;font:14px Times New Roman;text-decoration:underline;text-transform:none;');oLnk.appendChild(document.createTextNode(t));return oLnk};var showLink=function(oEle,src,flv){if(!oEle||!src)return;var cName='ujs_downlink';var p=oEle.previousSibling;if(p&&p.className==cName){oEle.parentNode.removeChild(p);return};var oDiv=document.createElement('div');oDiv.setAttribute('style','display:block;position:static;float:none;margin:0;padding:0;z-index:999;');oDiv.className=cName;oDiv.appendChild(createLink(src,'Сохранить'));var v=getVideo(flv,src);if(v){oDiv.appendChild(document.createTextNode(' ('));oDiv.appendChild(createLink(v,'Видео'));oDiv.appendChild(document.createTextNode(')'))};oEle.parentNode.insertBefore(oDiv,oEle)};var getParam=function(e,n){var v='';var r=new RegExp('^('+n+')$','i');var param=e.getElementsByTagName('param');for(var i=0,p;p=param[i];i++){if(p.getAttribute('name').match(r)){v=p.getAttribute('value');break}}return v};var searchEmbed=function(w){if(!w)return;var obj=w.document.getElementsByTagName('object');for(var i=0,oi;oi=obj[i];i++){showLink(oi,oi.getAttribute('data')||oi.getAttribute('src')||getParam(oi,'movie|data|src|code|filename|url')||(oi.getElementsByTagName('embed').length&&oi.getElementsByTagName('embed')[0].getAttribute('src')),getParam(oi,'flashvars'))};var em=w.document.getElementsByTagName('embed');for(var i=0,ei;ei=em[i];i++){if(ei.parentNode.tagName.toLowerCase()!='object')showLink(ei,ei.getAttribute('src'),ei.getAttribute('flashvars'))};for(var j=0,f;f=w.frames[j];j++){try{arguments.callee(f)}catch(e){}}};searchEmbed(window.top)})()");
+}
+
+# ----- PRIVATE
+
+_GetFlash_BuildMenu{
+$__m="Page &Properties";
+setmenu($__m,macro,"Ссылки на &Flash",GetFlash,-1);
+setaccel("ALT F","macros(GetFlash)");
+}
+
+$OnInit=$OnInit."_GetFlash_BuildMenu;";
+
+# ------------------------------------------------------------------------------------------------------------------
+$macroModules=$macroModules."GetFlash;";
